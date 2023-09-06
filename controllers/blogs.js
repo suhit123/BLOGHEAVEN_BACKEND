@@ -1,14 +1,14 @@
 const blogschema=require('../models/blogmodel');
 const userschema=require('../models/usermodel');
 exports.blogs=async(req,res)=>{
-    try{const blogs=await blogschema.find().sort({date: 'descending'});
+    try{const blogs = await blogschema.find().sort({date: 'descending'});
     if(blogs){    
         res.status(200).json(blogs)}
     else{
         res.status(404).json([]);
     }}
     catch(err){
-        res.status(500).json({message:"something gone wrong!"})
+        res.status(500).json({message:"Something gone wrong!"})
     }
 }
 exports.sepCustomBlogs=async(req,res)=>{
