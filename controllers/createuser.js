@@ -35,7 +35,7 @@ exports.createuser=async(req,res)=>{
             return res.status(400).send("Username and Email already exist!");
         }
         else if(check1){
-            return res.status(400).send("Username already exist");
+            return res.status(400).send("Username already exist!");
         }
         else if(check2){
             res.status(400).send("Email already exist!");
