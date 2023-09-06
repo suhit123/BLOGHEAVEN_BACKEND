@@ -1,6 +1,8 @@
 const mongoose=require('mongoose');
+require('dotenv').config();
 const connectwithdb=()=>{
-mongoose.connect("mongodb+srv://blogheaven:DPPVvEPQF868eIBT@cluster0.mpxvfkk.mongodb.net/blogheaven")
+console.log(process.env.DB_URL)
+mongoose.connect(`${process.env.DB_URL}`)
 .then(()=>{
     console.log("connect with db");
 })
